@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+}
+
+
+/* header */
+
+.header-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #344e66;
+}
+
+.bg-img {
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/Pokedexbg.png);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.pokedex-text {
+    width: 250px;
+}
+
+
+/* mainpage */
+
+.pokedex {
+    background-image: url(./img/lavadosbg.jpg);
+    height: 85vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* #pokedex {
+    min-height: 50vh;
+    background-color: rgb(192, 82, 31);
+    color: white;
+    display: flex;
+    padding: 24px;
+}
+
+#info-container {
+    background-color: white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: -40px;
+    min-height: 100px;
+}
+
+ */
