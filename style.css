@@ -90,18 +90,21 @@ body {
     margin-left: 1.5em;
     margin-bottom: 1em;
     margin-top: 1em;
+    text-transform: capitalize;
 }
 
 .pokemon-type1 {
     font-size: 18px;
     margin-left: 2em;
     margin-bottom: 0.75em;
+    text-transform: capitalize;
 }
 
 .pokemon-type2 {
     font-size: 18px;
     margin-left: 2em;
     margin-bottom: 0.75em;
+    text-transform: capitalize;
 }
 
 .pokemon-image {
