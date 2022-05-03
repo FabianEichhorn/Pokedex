@@ -33,10 +33,10 @@ body {
 
 .pokedex {
     background-image: url(./img/lavadosbg.jpg);
-    height: 85vh;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 .pokedex-wrap {
@@ -54,6 +54,12 @@ body {
     border-radius: 10px;
     margin-top: 3em;
     margin-left: 2em;
+}
+
+.pokemon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .poke-id {
@@ -99,7 +105,7 @@ body {
 }
 
 .pokemon-image {
-    width: 250px;
+    width: 200px;
     margin-right: 2em;
     margin-bottom: 2em;
 }
