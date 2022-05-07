@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="loadPokemon()">
+<body id="body" onload="loadPokemon()">
     <nav>
-        <div class="header-wrap">
+        <div class="header-wrap" id="header-wrap">
             <div class="bg-img">
                 <img class="pokedex-text" src="./img/podedex.png" alt="">
             </div>
@@ -27,8 +27,10 @@
         </div>
 
     </div>
-    <div class="pokemon-entry-wrap">
+    <div class="pokemon-entry-wrap d-none" id="pokemon-entry-wrap">
+
         <div class="pokemon-entry">
+            <img onclick="closePokemonEntry()" class="arrow-left" src="./img/arrow-121-32 (1).png" alt="">
             <div class="pokemon-entry-head">
                 <span class="pokemon-entry-head-Name">Charmander</span>
                 <span class="pokemon-entry-head-Idnumber">4</span>

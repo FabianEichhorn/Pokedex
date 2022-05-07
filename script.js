@@ -24,7 +24,7 @@ async function loadPokemon() {
                         <span class="pokemon-type1">${currentPokemon['types'][0]['type']['name']}</span>
                     </div>
                     <div class="pokemon-body-image">
-                        <img class="pokemon-image" src=${currentPokemon['sprites']['other']['home']['front_default']} alt="">
+                        <img onclick="showPokemonEntry()" class="pokemon-image" src=${currentPokemon['sprites']['other']['home']['front_default']} alt="">
                     </div>
                 </div>
                 </div>
@@ -33,7 +33,19 @@ async function loadPokemon() {
     }
 }
 
+function showPokemonEntry() {
+    document.getElementById('pokemon-entry-wrap').classList.remove('d-none');
+    document.getElementById('pokedex').classList.add('d-none');
+    document.getElementById('header-wrap').classList.add('d-none');
+    document.getElementById('body').classList.add('bg-1');
+}
 
+function closePokemonEntry() {
+    document.getElementById('pokemon-entry-wrap').classList.add('d-none');
+    document.getElementById('pokedex').classList.remove('d-none');
+    document.getElementById('header-wrap').classList.remove('d-none');
+    document.getElementById('body').classList.remove('bg-1');
+}
 
 
 
