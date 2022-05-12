@@ -99,6 +99,9 @@ body {
     margin-left: 2em;
     margin-bottom: 0.75em;
     text-transform: capitalize;
+    background-color: rgb(50, 144, 50);
+    padding: 5px 15px;
+    border-radius: 15px;
 }
 
 .pokemon-type2 {
@@ -106,6 +109,9 @@ body {
     margin-left: 2em;
     margin-bottom: 0.75em;
     text-transform: capitalize;
+    background-color: rgb(50, 144, 50);
+    padding: 5px 15px;
+    border-radius: 15px;
 }
 
 .pokemon-image {
@@ -161,6 +167,7 @@ body {
 .pokemon-entry-image {
     width: 350px;
     transition: 0.5s ease;
+    margin-top: -1.5em;
 }
 
 .pokemon-entry-image:hover {
@@ -210,6 +217,31 @@ body {
     z-index: 3;
     top: 32px;
     left: 40px;
+}
+
+.pokemon-type1-entry {
+    font-size: 18px;
+    margin-left: 2em;
+    margin-bottom: 0.75em;
+    margin-top: 1em;
+    text-transform: capitalize;
+    background-color: rgb(50, 144, 50);
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+.pokemon-type2-entry {
+    font-size: 18px;
+    margin-left: 2em;
+    margin-bottom: 0.75em;
+    text-transform: capitalize;
+    background-color: rgb(50, 144, 50);
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+.entry-pokemon-type {
+    margin-top: 1.5em;
 }
 
 
