@@ -89,7 +89,8 @@ body {
 }
 
 .pokemon-name {
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 500;
     margin-left: 1.5em;
     margin-bottom: 1em;
     margin-top: 1em;
@@ -106,6 +107,8 @@ body {
     padding: 5px 15px;
     border-radius: 15px;
     color: rgb(255, 255, 255);
+    width: 61px;
+    text-align: center;
 }
 
 .pokemon-type2 {
@@ -234,6 +237,8 @@ body {
     padding: 5px 15px;
     border-radius: 15px;
     color: white;
+    width: 61px;
+    text-align: center;
 }
 
 .pokemon-type2-entry {
@@ -251,6 +256,62 @@ body {
 }
 
 
+/* Stats-section */
+
+.stats-wrap {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 35px;
+}
+
+.stats-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats-progress-bar {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats-wrap span {
+    margin-top: 15px;
+}
+
+
+/* Moves-section */
+
+.moves-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.moves {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    max-height: 275px;
+    margin-top: 0.5em;
+    padding: 1em;
+}
+
+.pokemon-move {
+    background-color: lightgray;
+    border-radius: 15px;
+    font-size: 18px;
+    padding: 8px;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+
 /* global css */
 
 .d-none {
@@ -263,6 +324,10 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 
