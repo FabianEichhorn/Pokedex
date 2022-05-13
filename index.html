@@ -9,31 +9,33 @@
     <script src="script.js"></script>
     <script src="pokemonColors.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
 </head>
 
 <body id="body" onload="loadPokemon()">
-    <nav>
-        <div class="header-wrap" id="header-wrap">
-            <div class="bg-img">
-                <img class="pokedex-text" src="./img/podedex.png" alt="">
+    <div class="mainpage">
+        <nav>
+            <div class="header-wrap" id="header-wrap">
+                <div class="bg-img">
+                    <img class="pokedex-text" src="./img/podedex.png" alt="">
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <div class="pokedex" id="pokedex">
+        <div class="pokedex" id="pokedex">
 
-        <div class="pokedex-wrap" id="pokedex-wrap">
-            <div class="pokemon" id="pokemon">
+            <div class="pokedex-wrap" id="pokedex-wrap">
+                <div class="pokemon" id="pokemon">
+                </div>
             </div>
+
         </div>
+        <!-- show Pokemon card onclick -->
+        <div class="pokemon-entry-wrap d-none" id="pokemon-entry-wrap">
 
+
+        </div>
     </div>
-    <!-- show Pokemon card onclick -->
-    <div class="pokemon-entry-wrap d-none" id="pokemon-entry-wrap">
-
-
-    </div>
-
 </body>
 
 </html>

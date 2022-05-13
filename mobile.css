@@ -1,0 +1,41 @@
+@media(max-width: 600px) {
+    /* mainpage */
+    .pokedex-text {
+        width: 160px;
+    }
+    .pokemon-image {
+        width: 150px;
+    }
+    .pokemon-container {
+        width: 350px;
+        margin-left: 0;
+    }
+    /* pokemon Entry */
+    .pokemon-entry-image {
+        width: 250px;
+    }
+    .pokemon-entry-wrap {
+        margin-top: 0;
+    }
+    .pokemon-entry {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+    .entry-pokemon-type {
+        margin-top: 0;
+        margin-bottom: -1em;
+    }
+    .one-value {
+        margin-bottom: 20px;
+    }
+    .pokemon-entry-body {
+        height: 68vh;
+    }
+    .moves {
+        max-height: 500px;
+    }
+    .entry-body-value {
+        padding: 0px 60px 0;
+    }
+}
