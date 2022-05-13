@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -73,6 +74,7 @@ body {
     font-size: 22px;
     margin-right: 1em;
     margin-top: 1em;
+    color: white;
 }
 
 .pokemon-body {
@@ -92,6 +94,7 @@ body {
     margin-bottom: 1em;
     margin-top: 1em;
     text-transform: capitalize;
+    color: white;
 }
 
 .pokemon-type1 {
@@ -102,6 +105,7 @@ body {
     background-color: rgb(50, 144, 50);
     padding: 5px 15px;
     border-radius: 15px;
+    color: rgb(255, 255, 255);
 }
 
 .pokemon-type2 {
@@ -149,6 +153,7 @@ body {
     justify-content: space-between;
     padding: 73px 40px 0;
     /*     padding: 7vw 14vh 0px; */
+    color: white;
 }
 
 .pokemon-entry-head-Name {
@@ -228,6 +233,7 @@ body {
     background-color: rgb(50, 144, 50);
     padding: 5px 15px;
     border-radius: 15px;
+    color: white;
 }
 
 .pokemon-type2-entry {
