@@ -1,7 +1,10 @@
 let currentPokemon;
 
+let allPokemon = [];
+let pokemonLimit = 21
+
 async function loadPokemon() {
-    for (let i = 1; i < 20; i++) {
+    for (let i = 1; i < pokemonLimit; i++) {
 
         let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         let response = await fetch(url);
@@ -11,7 +14,8 @@ async function loadPokemon() {
          let testresponse = await fetch(testurl);
          bulbasaur = await testresponse.json();
          console.log('test ', bulbasaur); */
-        renderPokemonMainpage(i)
+        renderPokemonMainpage(i);
+        allPokemon.push(currentPokemon); // pusht alle Pokemon in das Array, einfacher um bei der Suche zu arbeiten.
     }
 
 }
@@ -46,6 +50,7 @@ function showPokemonEntry() {
     document.getElementById('pokedex').classList.add('d-none');
     document.getElementById('header-wrap').classList.add('d-none');
     document.getElementById('body').classList.add('bg-1');
+    document.getElementById('search-wrapper').classList.add('d-none')
 }
 
 function closePokemonEntry() {
@@ -53,30 +58,31 @@ function closePokemonEntry() {
     document.getElementById('pokedex').classList.remove('d-none');
     document.getElementById('header-wrap').classList.remove('d-none');
     document.getElementById('body').classList.remove('bg-1');
+    document.getElementById('search-wrapper').classList.remove('d-none')
 }
 
 
 async function showPokemonStats(i) {
 
-    let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-    let response = await fetch(url);
-    currentPokemon = await response.json();
+    /*     let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        let response = await fetch(url); */
+    /*     currentPokemon = await response.json(); */
     console.log('loaded pokemon stats', currentPokemon);
-    let height = currentPokemon['height'] / 10;
-    let weight = currentPokemon['weight'] / 10;
+    let height = allPokemon[i]['height'] / 10;
+    let weight = allPokemon[i]['weight'] / 10;
 
     document.getElementById('pokemon-entry-wrap').innerHTML = `
         <div class="pokemon-entry" id="pokemon-entry${i}">
             <img onclick="closePokemonEntry()" class="arrow-left" src="./img/arrow-121-32 (1).png" alt="">
             <div class="pokemon-entry-head">
-                <span class="pokemon-entry-head-Name">${currentPokemon['name']}</span>
-                <span class="pokemon-entry-head-Idnumber">${currentPokemon['id']}</span>
+                <span class="pokemon-entry-head-Name">${allPokemon[i]['name']}</span>
+                <span class="pokemon-entry-head-Idnumber">${allPokemon[i]['id']}</span>
             </div>
             <div class="entry-pokemon-type">
-                <span class="pokemon-type1-entry" id="pokemon-type1-entry${i}">${currentPokemon['types'][0]['type']['name']}</span>
+                <span class="pokemon-type1-entry" id="pokemon-type1-entry${i}">${allPokemon[i]['types'][0]['type']['name']}</span>
             </div>
             <div class="pokemon-entry-img">
-                <img class="pokemon-entry-image" src=${currentPokemon['sprites']['other']['home']['front_default']}>
+                <img class="pokemon-entry-image" src=${allPokemon[i]['sprites']['other']['home']['front_default']}>
             </div>
             <div class="pokemon-entry-body" id="pokemon-entry-body">
                 <div class="entry-body-headings">
@@ -93,11 +99,11 @@ async function showPokemonStats(i) {
                         <span>Base Experience</span>
                     </div>
                     <div class="one-value">
-                        <span>${currentPokemon['types'][0]['type']['name']}</span>
+                        <span>${allPokemon[i]['types'][0]['type']['name']}</span>
                         <span>${height.toFixed(2).replace(".", ",")}m</span>
                         <span>${weight.toFixed(2).replace(".",",")}kg</span>
-                        <span>${currentPokemon['abilities'][0]['ability']['name']}</span>
-                        <span>${currentPokemon['base_experience']}</span>
+                        <span>${allPokemon[i]['abilities'][0]['ability']['name']}</span>
+                        <span>${allPokemon[i]['base_experience']}</span>
                     </div>
                 </div>
             </div>
@@ -176,6 +182,17 @@ function loadMoves() {
         `;
     }
 
+}
+
+
+function checkSecondType() {
+    for (let index = 0; index < 2; index++) {
+        if (index == 1) {
+
+        } else {
+            document.getElementById('pokemon-type2').classList.add('d-none')
+        }
+    }
 }
 
 

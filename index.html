@@ -8,12 +8,14 @@
     <title>Pokedex</title>
     <script src="script.js"></script>
     <script src="pokemonColors.js"></script>
+    <script src="searchbar.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mobile.css">
 </head>
 
 <body id="body" onload="loadPokemon()">
     <div class="mainpage">
+        <!-- header -->
         <nav>
             <div class="header-wrap" id="header-wrap">
                 <div class="bg-img">
@@ -22,6 +24,15 @@
             </div>
         </nav>
 
+        <!-- search-bar -->
+
+        <div class="search-wrapper" id="search-wrapper">
+            <!--             <button onclick="filterNames()">Suchen</button> -->
+            <label for="search">Search Pokemon</label>
+            <input type="text" id="search-input" class="search-wrapper" onclick="this.value='';" onkeyup="filterNames()">
+        </div>
+
+        <!-- pokedex -->
         <div class="pokedex" id="pokedex">
 
             <div class="pokedex-wrap" id="pokedex-wrap">

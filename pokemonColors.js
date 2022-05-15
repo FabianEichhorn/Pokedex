@@ -85,7 +85,7 @@ function setTypeBackgrounds(i) {
 
 
 function setBackgroundcolorEntry(i) {
-    let mainTypeEntry = currentPokemon['types'][0]['type']['name'];
+    let mainTypeEntry = allPokemon[i]['types'][0]['type']['name'];
 
     if (mainTypeEntry == 'normal') {
         document.getElementById(`pokemon-entry${i}`).style.backgroundColor = "#a39985"
@@ -128,7 +128,7 @@ function setBackgroundcolorEntry(i) {
 
 
 function setTypeBackgroundsEntry(i) {
-    let typeBackground = currentPokemon['types'][0]['type']['name'];
+    let typeBackground = allPokemon[i]['types'][0]['type']['name'];
 
     if (typeBackground == 'normal') {
         document.getElementById(`pokemon-type1-entry${i}`).style.backgroundColor = "#8e8674" /* - */
