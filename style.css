@@ -28,7 +28,7 @@ body {
 } */
 
 .bg-img {
-    height: 15vh;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,11 +50,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .25rem;
+}
+
+.label {
+    background-color: #2c7282;
+    border-radius: 12px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: none;
+    height: 37px;
+    display: flex;
+    align-items: center;
 }
 
 input {
-    font-size: 1rem;
+    cursor: pointer;
+    height: 35px;
+    min-width: 200px;
+    border-radius: 12px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: none;
+    outline: none;
 }
 
 
