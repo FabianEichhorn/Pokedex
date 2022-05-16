@@ -1,7 +1,7 @@
 let currentPokemon;
 
 let allPokemon = [];
-let pokemonLimit = 21
+let pokemonLimit = 151
 
 async function loadPokemon() {
     for (let i = 1; i < pokemonLimit; i++) {

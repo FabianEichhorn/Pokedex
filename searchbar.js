@@ -7,7 +7,7 @@ function filterNames(i) {
         let name = allPokemon[j]['name'];
         if (name.toLowerCase().includes(input)) {
             /*             pokemonContainer.innerHTML = ""; */
-            pokemonContainer.innerHTML += getSearchedPokemon(allPokemon, j, i);
+            getSearchedPokemon(allPokemon, j, i);
             console.log('hi :)');
         }
 
@@ -16,7 +16,7 @@ function filterNames(i) {
 }
 
 function getSearchedPokemon(i, j) {
-    return `
+    document.getElementById('pokemon').innerHTML += `
     <div class="pokemon-container" id="pokemon-container${j}" onclick="showPokemonEntry(), showPokemonStats(${j})">
     <div class="poke-id">
             <span class="pokemon-id">${allPokemon[j]['id']}</span>
@@ -34,7 +34,8 @@ function getSearchedPokemon(i, j) {
         </div>
         </div>
 `;
-
+    setBackgroundcolorSearched(j) // zuvor mit Return Funktion für die Template gearbeitet wodurch diese Funktion unereichbar wurde. somit muss man, wenn man weitere Funtionen hinzufügen möchte mit documentgetEl... arbeiten. 
+    setTypeBackgroundsSearched(j)
 }
 
 
