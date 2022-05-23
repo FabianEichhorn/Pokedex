@@ -168,6 +168,9 @@ input {
     background-color: rgb(50, 144, 50);
     padding: 5px 15px;
     border-radius: 15px;
+    color: rgb(255, 255, 255);
+    width: 61px;
+    text-align: center;
 }
 
 .pokemon-image {
@@ -292,16 +295,21 @@ input {
 
 .pokemon-type2-entry {
     font-size: 18px;
-    margin-left: 2em;
+    margin-left: 0.25em;
     margin-bottom: 0.75em;
+    margin-top: 1em;
     text-transform: capitalize;
     background-color: rgb(50, 144, 50);
     padding: 5px 15px;
     border-radius: 15px;
+    color: white;
+    width: 61px;
+    text-align: center;
 }
 
 .entry-pokemon-type {
     margin-top: 1.5em;
+    display: flex;
 }
 
 

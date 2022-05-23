@@ -19,12 +19,13 @@ async function loadPokemon() {
         renderPokemonMainpage(i);
 
 
+
     }
 }
 
 
 function renderPokemonMainpage(i) {
-
+    /*     let type2 = allPokemon[i].types[1] */
     document.getElementById('pokemon').innerHTML += `
             <div class="pokemon-container" id="pokemon-container${i}" onclick="showPokemonEntry(), showPokemonStats(${i})">
         <div class="poke-id">
@@ -36,7 +37,7 @@ function renderPokemonMainpage(i) {
                         <span class="pokemon-name">${currentPokemon['name']}</span>
                         <div class="types-wrap" id="types-wrap">
                         <span class="pokemon-type1" id="pokemon-type1${i}">${currentPokemon['types'][0]['type']['name']}</span>
-                        <span class="pokemon-type2" id="pokemon-type2${i}">Test</span>
+                        <span class="pokemon-type2" id="pokemon-type2">Test</span>
                         </div>
                     </div>
                     <div class="pokemon-body-image">
@@ -87,6 +88,7 @@ async function showPokemonStats(i) {
             </div>
             <div class="entry-pokemon-type">
                 <span class="pokemon-type1-entry" id="pokemon-type1-entry${i}">${allPokemon[i-1]['types'][0]['type']['name']}</span>
+                <span class="pokemon-type2-entry d-none" id="pokemon-type2-entry">Test</span>
             </div>
             <div class="pokemon-entry-img">
                 <img class="pokemon-entry-image" src=${allPokemon[i-1]['sprites']['other']['home']['front_default']}>
@@ -116,7 +118,7 @@ async function showPokemonStats(i) {
             </div>
         </div>
         `;
-
+    checkSecondTypeStats(i);
     setBackgroundcolorEntry(i);
     setTypeBackgroundsEntry(i);
     document.getElementById('about-span').classList.add('underline');
@@ -194,24 +196,29 @@ function loadMoves() {
 }
 
 
-function checkSecondType(i) {
-    let pokemonClass;
-    for (let k = 0; k < allPokemon[i]['types'].length; k++) {
-
-        if (k == 0) {
-
-            document.getElementById('types-wrap').innerHTML = `<span class="pokemon-type1" id="pokemon-type1${i}-${k}">${currentPokemon['types'][0]['type']['name']}</span>`;
-
-
-        } else if (k > 0) {
-            document.getElementById('types-wrap').innerHTML = `
-            <span class="pokemon-type1" id="pokemon-type1${i}">${currentPokemon['types'][0]['type']['name']}</span>
-            <span class="pokemon-type2" id="pokemon-type2${i}"></span>
-            `;
-        }
+function checkSecondTypeStats(i) {
+    let type2 = allPokemon[i - 1].types[1];
+    if (type2) {
+        type2 = allPokemon[i - 1].types[1].type.name;
+        document.getElementById('pokemon-type2-entry').classList.remove('d-none');
+        document.getElementById('pokemon-type2-entry').innerHTML = `${type2}`;
+        setTypeBackgroundsEntry2Type(i)
+    } else {
+        type2 = '';
     }
 }
 
+function checkSecondType(i) {
+    let type2 = allPokemon[i].types[1];
+    if (type2) {
+        type2 = allPokemon[i].types[1].type.name;
+        document.getElementById('pokemon-type2').classList.remove('d-none');
+        document.getElementById('pokemon-type2').innerHTML = `${type2}`;
+        setTypeBackgroundsEntry2Type(i)
+    } else {
+        type2 = '';
+    }
+}
 
 
 
