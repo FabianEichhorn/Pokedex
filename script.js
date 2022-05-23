@@ -1,7 +1,7 @@
 let currentPokemon;
 
 let allPokemon = [];
-let pokemonLimit = 151
+let pokemonLimit = 30
 
 async function loadPokemon() {
     for (let i = 1; i < pokemonLimit; i++) {
@@ -14,14 +14,17 @@ async function loadPokemon() {
          let testresponse = await fetch(testurl);
          bulbasaur = await testresponse.json();
          console.log('test ', bulbasaur); */
-        renderPokemonMainpage(i);
-        allPokemon.push(currentPokemon); // pusht alle Pokemon in das Array, einfacher um bei der Suche zu arbeiten.
-    }
 
+        allPokemon.push(currentPokemon); // pusht alle Pokemon in das Array, einfacher um bei der Suche zu arbeiten.
+        renderPokemonMainpage(i);
+
+
+    }
 }
 
 
 function renderPokemonMainpage(i) {
+
     document.getElementById('pokemon').innerHTML += `
             <div class="pokemon-container" id="pokemon-container${i}" onclick="showPokemonEntry(), showPokemonStats(${i})">
         <div class="poke-id">
@@ -31,7 +34,10 @@ function renderPokemonMainpage(i) {
         <div class="pokemon-body-nametype">
              
                         <span class="pokemon-name">${currentPokemon['name']}</span>
+                        <div class="types-wrap" id="types-wrap">
                         <span class="pokemon-type1" id="pokemon-type1${i}">${currentPokemon['types'][0]['type']['name']}</span>
+                        <span class="pokemon-type2" id="pokemon-type2${i}">Test</span>
+                        </div>
                     </div>
                     <div class="pokemon-body-image">
                         <img  class="pokemon-image" src=${currentPokemon['sprites']['other']['home']['front_default']} alt="">
@@ -40,6 +46,7 @@ function renderPokemonMainpage(i) {
                 </div>
                 </div>
         `;
+
     setBackgroundcolorMainpage(i);
     setTypeBackgrounds(i);
 
@@ -68,21 +75,21 @@ async function showPokemonStats(i) {
         let response = await fetch(url); */
     /*     currentPokemon = await response.json(); */
     console.log('loaded pokemon stats', currentPokemon);
-    let height = allPokemon[i]['height'] / 10;
-    let weight = allPokemon[i]['weight'] / 10;
+    let height = allPokemon[i - 1]['height'] / 10;
+    let weight = allPokemon[i - 1]['weight'] / 10;
 
     document.getElementById('pokemon-entry-wrap').innerHTML = `
         <div class="pokemon-entry" id="pokemon-entry${i}">
             <img onclick="closePokemonEntry()" class="arrow-left" src="./img/arrow-121-32 (1).png" alt="">
             <div class="pokemon-entry-head">
-                <span class="pokemon-entry-head-Name">${allPokemon[i]['name']}</span>
-                <span class="pokemon-entry-head-Idnumber">${allPokemon[i]['id']}</span>
+                <span class="pokemon-entry-head-Name">${allPokemon[i-1]['name']}</span>
+                <span class="pokemon-entry-head-Idnumber">${allPokemon[i-1]['id']}</span>
             </div>
             <div class="entry-pokemon-type">
-                <span class="pokemon-type1-entry" id="pokemon-type1-entry${i}">${allPokemon[i]['types'][0]['type']['name']}</span>
+                <span class="pokemon-type1-entry" id="pokemon-type1-entry${i}">${allPokemon[i-1]['types'][0]['type']['name']}</span>
             </div>
             <div class="pokemon-entry-img">
-                <img class="pokemon-entry-image" src=${allPokemon[i]['sprites']['other']['home']['front_default']}>
+                <img class="pokemon-entry-image" src=${allPokemon[i-1]['sprites']['other']['home']['front_default']}>
             </div>
             <div class="pokemon-entry-body" id="pokemon-entry-body">
                 <div class="entry-body-headings">
@@ -99,16 +106,17 @@ async function showPokemonStats(i) {
                         <span>Base Experience</span>
                     </div>
                     <div class="one-value">
-                        <span>${allPokemon[i]['types'][0]['type']['name']}</span>
+                        <span>${allPokemon[i-1]['types'][0]['type']['name']}</span>
                         <span>${height.toFixed(2).replace(".", ",")}m</span>
                         <span>${weight.toFixed(2).replace(".",",")}kg</span>
-                        <span>${allPokemon[i]['abilities'][0]['ability']['name']}</span>
-                        <span>${allPokemon[i]['base_experience']}</span>
+                        <span>${allPokemon[i-1]['abilities'][0]['ability']['name']}</span>
+                        <span>${allPokemon[i-1]['base_experience']}</span>
                     </div>
                 </div>
             </div>
         </div>
         `;
+
     setBackgroundcolorEntry(i);
     setTypeBackgroundsEntry(i);
     document.getElementById('about-span').classList.add('underline');
@@ -155,6 +163,7 @@ function showStatsEntry(i) {
 
 
 function showMovesEntry(i) {
+
     document.getElementById('pokemon-entry-body').innerHTML = `
     <div class="pokemon-entry-body" id="pokemon-entry-body">
                 <div class="entry-body-headings">
@@ -185,12 +194,20 @@ function loadMoves() {
 }
 
 
-function checkSecondType() {
-    for (let index = 0; index < 2; index++) {
-        if (index == 1) {
+function checkSecondType(i) {
+    let pokemonClass;
+    for (let k = 0; k < allPokemon[i]['types'].length; k++) {
 
-        } else {
-            document.getElementById('pokemon-type2').classList.add('d-none')
+        if (k == 0) {
+
+            document.getElementById('types-wrap').innerHTML = `<span class="pokemon-type1" id="pokemon-type1${i}-${k}">${currentPokemon['types'][0]['type']['name']}</span>`;
+
+
+        } else if (k > 0) {
+            document.getElementById('types-wrap').innerHTML = `
+            <span class="pokemon-type1" id="pokemon-type1${i}">${currentPokemon['types'][0]['type']['name']}</span>
+            <span class="pokemon-type2" id="pokemon-type2${i}"></span>
+            `;
         }
     }
 }

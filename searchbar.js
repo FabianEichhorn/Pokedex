@@ -17,7 +17,7 @@ function filterNames(i) {
 
 function getSearchedPokemon(i, j) {
     document.getElementById('pokemon').innerHTML += `
-    <div class="pokemon-container" id="pokemon-container${j}" onclick="showPokemonEntry(), showPokemonStats(${j})">
+    <div class="pokemon-container" id="pokemon-container${j}" onclick="showPokemonEntry(), showPokemonStats(${j+1})">
     <div class="poke-id">
             <span class="pokemon-id">${allPokemon[j]['id']}</span>
      </div>
