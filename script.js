@@ -10,11 +10,6 @@ async function loadPokemon() {
         let response = await fetch(url);
         currentPokemon = await response.json();
         console.log('loaded pokemon', currentPokemon);
-        /*  let testurl = `https://pokeapi.co/api/v2/pokemon/4`;
-         let testresponse = await fetch(testurl);
-         bulbasaur = await testresponse.json();
-         console.log('test ', bulbasaur); */
-
         allPokemon.push(currentPokemon); // pusht alle Pokemon in das Array, einfacher um bei der Suche zu arbeiten.
         renderPokemonMainpage(i);
 
@@ -25,29 +20,28 @@ async function loadPokemon() {
 
 
 function renderPokemonMainpage(i) {
-    /*     let type2 = allPokemon[i].types[1] */
     document.getElementById('pokemon').innerHTML += `
             <div class="pokemon-container" id="pokemon-container${i}" onclick="showPokemonEntry(), showPokemonStats(${i})">
         <div class="poke-id">
-                    <span class="pokemon-id">${currentPokemon['id']}</span>
+                    <span class="pokemon-id">${allPokemon[i-1]['id']}</span>
              </div>
              <div class="pokemon-body" id="pokemon-body">
         <div class="pokemon-body-nametype">
              
-                        <span class="pokemon-name">${currentPokemon['name']}</span>
+                        <span class="pokemon-name">${allPokemon[i-1]['name']}</span>
                         <div class="types-wrap" id="types-wrap">
-                        <span class="pokemon-type1" id="pokemon-type1${i}">${currentPokemon['types'][0]['type']['name']}</span>
-                        <span class="pokemon-type2" id="pokemon-type2">Test</span>
+                        <span class="pokemon-type1" id="pokemon-type1${i}">${allPokemon[i-1]['types'][0]['type']['name']}</span>
+                        <span class="pokemon-type2 d-none" id="pokemon-type2${i}">Test</span>
                         </div>
                     </div>
                     <div class="pokemon-body-image">
-                        <img  class="pokemon-image" src=${currentPokemon['sprites']['other']['home']['front_default']} alt="">
+                        <img  class="pokemon-image" src=${allPokemon[i-1]['sprites']['other']['home']['front_default']} alt="">
                     </div>
                 </div>
                 </div>
                 </div>
         `;
-
+    checkSecondType(i)
     setBackgroundcolorMainpage(i);
     setTypeBackgrounds(i);
 
@@ -209,12 +203,12 @@ function checkSecondTypeStats(i) {
 }
 
 function checkSecondType(i) {
-    let type2 = allPokemon[i].types[1];
+    let type2 = allPokemon[i - 1].types[1];
     if (type2) {
-        type2 = allPokemon[i].types[1].type.name;
-        document.getElementById('pokemon-type2').classList.remove('d-none');
-        document.getElementById('pokemon-type2').innerHTML = `${type2}`;
-        setTypeBackgroundsEntry2Type(i)
+        type2 = allPokemon[i - 1].types[1].type.name;
+        document.getElementById(`pokemon-type2${i}`).classList.remove('d-none');
+        document.getElementById(`pokemon-type2${i}`).innerHTML = `${type2}`;
+        setTypeBackgrounds2Type(i)
     } else {
         type2 = '';
     }

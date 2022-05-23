@@ -84,6 +84,49 @@ function setTypeBackgrounds(i) {
 }
 
 
+function setTypeBackgrounds2Type(i) {
+    let typeBackground = allPokemon[i - 1]['types'][1]['type']['name'];
+
+    if (typeBackground == 'normal') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#8e8674" /* - */
+    } else if (typeBackground == 'fighting') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#84402b" /* - */
+    } else if (typeBackground == 'flying') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#707eba" /* - */
+    } else if (typeBackground == 'poison') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#954689" /* - */
+    } else if (typeBackground == 'ground') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#ae9042" /* - */
+    } else if (typeBackground == 'rock') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#a28e4b" /* - */
+    } else if (typeBackground == 'bug') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#8b990e" /* - */
+    } else if (typeBackground == 'ghost') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#4e4e92" /* - */
+    } else if (typeBackground == 'steel') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#858599" /* - */
+    } else if (typeBackground == 'fire') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#d32f3f" /* - */
+    } else if (typeBackground == 'water') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#204a91" /* - */
+    } else if (typeBackground == 'grass') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#2c805c" /* - */
+    } else if (typeBackground == 'electric') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#d39623" /* - */
+    } else if (typeBackground == 'psychic') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#db598b" /* - */
+    } else if (typeBackground == 'ice') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#1f82a5" /* - */
+    } else if (typeBackground == 'dragon') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#604bb8" /* - */
+    } else if (typeBackground == 'dark') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#47392f" /* - */
+    } else if (typeBackground == 'fairy') {
+        document.getElementById(`pokemon-type2${i}`).style.backgroundColor = "#bc84bd" /* - */
+    }
+}
+
+
 function setBackgroundcolorEntry(i) {
     let mainTypeEntry = allPokemon[i - 1]['types'][0]['type']['name'];
 
@@ -294,5 +337,48 @@ function setTypeBackgroundsSearched(j) {
         document.getElementById(`pokemon-type1${j}`).style.backgroundColor = "#47392f" /* - */
     } else if (typeBackground == 'fairy') {
         document.getElementById(`pokemon-type1${j}`).style.backgroundColor = "#bc84bd" /* - */
+    }
+}
+
+
+function setTypeBackgroundsSearched2Type(j) {
+    let typeBackground = allPokemon[j]['types'][1]['type']['name'];
+
+    if (typeBackground == 'normal') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#8e8674" /* - */
+    } else if (typeBackground == 'fighting') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#84402b" /* - */
+    } else if (typeBackground == 'flying') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#707eba" /* - */
+    } else if (typeBackground == 'poison') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#954689" /* - */
+    } else if (typeBackground == 'ground') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#ae9042" /* - */
+    } else if (typeBackground == 'rock') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#a28e4b" /* - */
+    } else if (typeBackground == 'bug') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#8b990e" /* - */
+    } else if (typeBackground == 'ghost') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#4e4e92" /* - */
+    } else if (typeBackground == 'steel') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#858599" /* - */
+    } else if (typeBackground == 'fire') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#d32f3f" /* - */
+    } else if (typeBackground == 'water') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#204a91" /* - */
+    } else if (typeBackground == 'grass') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#2c805c" /* - */
+    } else if (typeBackground == 'electric') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#d39623" /* - */
+    } else if (typeBackground == 'psychic') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#db598b" /* - */
+    } else if (typeBackground == 'ice') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#1f82a5" /* - */
+    } else if (typeBackground == 'dragon') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#604bb8" /* - */
+    } else if (typeBackground == 'dark') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#47392f" /* - */
+    } else if (typeBackground == 'fairy') {
+        document.getElementById(`pokemon-type2${j}`).style.backgroundColor = "#bc84bd" /* - */
     }
 }
