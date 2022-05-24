@@ -8,37 +8,18 @@ function filterNames(i) {
         if (name.toLowerCase().includes(input)) {
             /*             pokemonContainer.innerHTML = ""; */
             getSearchedPokemon(allPokemon, j, i);
-            console.log('hi :)');
         }
-
     }
-
 }
+
 
 function getSearchedPokemon(i, j) {
-    document.getElementById('pokemon').innerHTML += `
-    <div class="pokemon-container" id="pokemon-container${j}" onclick="showPokemonEntry(), showPokemonStats(${j+1})">
-    <div class="poke-id">
-            <span class="pokemon-id">${allPokemon[j]['id']}</span>
-     </div>
-     <div class="pokemon-body" id="pokemon-body">
-    <div class="pokemon-body-nametype">
-     
-                <span class="pokemon-name">${allPokemon[j]['name']}</span>
-                <span class="pokemon-type1" id="pokemon-type1${j}">${allPokemon[j]['types'][0]['type']['name']}</span>
-                <span class="pokemon-type2 d-none" id="pokemon-type2${j}">Test</span>
-            </div>
-            <div class="pokemon-body-image">
-                <img  class="pokemon-image" src=${allPokemon[j]['sprites']['other']['home']['front_default']} alt="">
-            </div>
-        </div>
-        </div>
-        </div>
-`;
-    checkSecondTypeStatsSearch(i, j)
-    setBackgroundcolorSearched(j) // zuvor mit Return Funktion für die Template gearbeitet wodurch diese Funktion unereichbar wurde. somit muss man, wenn man weitere Funtionen hinzufügen möchte mit documentgetEl... arbeiten. 
-    setTypeBackgroundsSearched(j)
+    document.getElementById('pokemon').innerHTML += renderSearchedPokemonHTML(i, j);
+    checkSecondTypeStatsSearch(i, j);
+    setBackgroundcolorSearched(j); // zuvor mit Return Funktion für die Template gearbeitet wodurch diese Funktion unereichbar wurde. somit muss man, wenn man weitere Funtionen hinzufügen möchte mit documentgetEl... arbeiten. 
+    setTypeBackgroundsSearched(j);
 }
+
 
 function checkSecondTypeStatsSearch(i, j) {
     let type2 = allPokemon[j].types[1];
@@ -46,7 +27,7 @@ function checkSecondTypeStatsSearch(i, j) {
         type2 = allPokemon[j].types[1].type.name;
         document.getElementById(`pokemon-type2${j}`).classList.remove('d-none');
         document.getElementById(`pokemon-type2${j}`).innerHTML = `${type2}`;
-        setTypeBackgroundsSearched2Type(j)
+        setTypeBackgroundsSearched2Type(j);
     } else {
         type2 = '';
     }
