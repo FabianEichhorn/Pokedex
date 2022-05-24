@@ -1,10 +1,13 @@
 let currentPokemon;
 
 let allPokemon = [];
-let pokemonLimit = 30
+let pokemonLimit = 152;
+
+let arrIndex = 1;
+let length = 15;
 
 async function loadPokemon() {
-    for (let i = 1; i < pokemonLimit; i++) {
+    for (let i = arrIndex; i < length; i++) {
 
         let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         let response = await fetch(url);
@@ -18,6 +21,15 @@ async function loadPokemon() {
     }
 }
 
+/* window.onscroll = function() {
+    let scrollY = window.scrollY;
+    if ((window.innerHeight + scrollY) >= document.body.scrollHeight) {
+        arrIndex = arrIndex + 20;
+        length = length + 19;
+        loadPokemon();
+        scrollY = window.scrollY - window.innerHeight;
+    }
+}; */
 
 function renderPokemonMainpage(i) {
     document.getElementById('pokemon').innerHTML += `
@@ -35,7 +47,7 @@ function renderPokemonMainpage(i) {
                         </div>
                     </div>
                     <div class="pokemon-body-image">
-                        <img  class="pokemon-image" src=${allPokemon[i-1]['sprites']['other']['home']['front_default']} alt="">
+                        <img class="pokemon-image" src=${allPokemon[i-1]['sprites']['other']['home']['front_default']} alt="" >
                     </div>
                 </div>
                 </div>
@@ -173,12 +185,12 @@ function showMovesEntry(i) {
         </div>
     </div>
     `;
-    loadMoves();
+    loadMoves(i);
     document.getElementById('moves-span').classList.add('underline');
 }
 
-function loadMoves() {
-    let pokemonMoves = currentPokemon['moves'];
+function loadMoves(i) {
+    let pokemonMoves = allPokemon[i - 1]['moves'];
     for (let i = 0; i < pokemonMoves.length; i++) {
         const pokemonMove = pokemonMoves[i]['move']['name'];
 
