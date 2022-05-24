@@ -2,7 +2,7 @@ function renderMainpageHTML(i) {
     return `
     <div class="pokemon-container" id="pokemon-container${i}" onclick="showPokemonEntry(), showPokemonStats(${i})">
 <div class="poke-id">
-            <span class="pokemon-id">${allPokemon[i-1]['id']}</span>
+            <span class="pokemon-id">#${allPokemon[i-1]['id']}</span>
      </div>
      <div class="pokemon-body" id="pokemon-body">
 <div class="pokemon-body-nametype">
@@ -29,7 +29,7 @@ function renderPokemonStatsHTML(i, height, weight) {
         <img onclick="closePokemonEntry()" class="arrow-left" src="./img/arrow-121-32 (1).png" alt="">
         <div class="pokemon-entry-head">
             <span class="pokemon-entry-head-Name">${allPokemon[i-1]['name']}</span>
-            <span class="pokemon-entry-head-Idnumber">${allPokemon[i-1]['id']}</span>
+            <span class="pokemon-entry-head-Idnumber">#${allPokemon[i-1]['id']}</span>
         </div>
         <div class="entry-pokemon-type">
             <span class="pokemon-type1-entry" id="pokemon-type1-entry${i}">${allPokemon[i-1]['types'][0]['type']['name']}</span>
@@ -40,9 +40,9 @@ function renderPokemonStatsHTML(i, height, weight) {
         </div>
         <div class="pokemon-entry-body" id="pokemon-entry-body">
             <div class="entry-body-headings">
-                <span onclick="showPokemonStats(${i})" id="about-span">About</span>
-                <span onclick="showStatsEntry(${i})">Stats</span>
-                <span onclick="showMovesEntry(${i})">Moves</span>
+                <span class="cursor" onclick="showPokemonStats(${i})" id="about-span">About</span>
+                <span class="cursor" onclick="showStatsEntry(${i})">Stats</span>
+                <span class="cursor" onclick="showMovesEntry(${i})">Moves</span>
             </div>
             <div class="entry-body-value" id="entry-body-value">
                 <div class="one-value">
@@ -70,9 +70,9 @@ function renderStatsEntryHTML(i) {
     return `
     <div class="pokemon-entry-body" id="pokemon-entry-body">
                 <div class="entry-body-headings">
-                    <span onclick="showPokemonStats(${i})">About</span>
-                    <span onclick="showStatsEntry(${i})" id="stats-span">Stats</span>
-                    <span onclick="showMovesEntry(${i})">Moves</span>
+                    <span class="cursor" onclick="showPokemonStats(${i})">About</span>
+                    <span class="cursor" onclick="showStatsEntry(${i})" id="stats-span">Stats</span>
+                    <span class="cursor" onclick="showMovesEntry(${i})">Moves</span>
                 </div>
     <div class="stats-wrap">
         <div class="stats-list">
@@ -120,9 +120,9 @@ function renderMoveEntryHTML(i) {
     return `
     <div class="pokemon-entry-body" id="pokemon-entry-body">
                 <div class="entry-body-headings">
-                    <span onclick="showPokemonStats(${i})">About</span>
-                    <span onclick="showStatsEntry(${i})">Stats</span>
-                    <span id="moves-span">Moves</span>
+                    <span class="cursor" onclick="showPokemonStats(${i})">About</span>
+                    <span class="cursor" onclick="showStatsEntry(${i})">Stats</span>
+                    <span class="cursor" id="moves-span">Moves</span>
                 </div>
     <div class="moves-wrap">
         <div class="moves" id="moves">

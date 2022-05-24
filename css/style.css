@@ -41,6 +41,7 @@ body {
 
 .pokedex-text {
     width: 250px;
+    cursor: pointer;
 }
 
 
@@ -61,6 +62,8 @@ body {
     height: 37px;
     display: flex;
     align-items: center;
+    font-size: 14px;
+    padding: 2px;
 }
 
 input {
@@ -72,6 +75,7 @@ input {
     border-bottom-left-radius: 0px;
     border: none;
     outline: none;
+    padding: 2px;
 }
 
 
@@ -118,12 +122,15 @@ input {
     font-size: 22px;
     margin-right: 1em;
     margin-top: 1em;
-    color: white;
+    color: #212529;
+    font-weight: 800;
+    opacity: 70%;
 }
 
 .pokemon-body {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .pokemon-body-nametype {
@@ -134,12 +141,12 @@ input {
 
 .pokemon-name {
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 600;
     margin-left: 1.5em;
     margin-bottom: 1em;
     margin-top: 1em;
     text-transform: capitalize;
-    color: white;
+    color: #212529;
 }
 
 .types-wrap {
@@ -187,6 +194,10 @@ input {
 
 
 /* global css */
+
+.cursor {
+    cursor: pointer;
+}
 
 .d-none {
     display: none;

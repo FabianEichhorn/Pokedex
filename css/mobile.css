@@ -39,4 +39,14 @@
     .entry-body-value {
         padding: 0px 60px 0;
     }
+    .one-value span {
+        margin-top: 16px;
+    }
+    .stats-wrap span {
+        margin-top: 13px;
+    }
+    .progress-container {
+        margin-top: 21px;
+        width: 150px;
+    }
 }

@@ -1,18 +1,19 @@
 /* Pokemon-Entry-Box */
 
 .pokemon-entry-wrap {
-    height: 100vh;
+    height: 96vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .pokemon-entry {
+    margin-top: 4vh;
     background-color: rgb(219, 83, 83);
-    height: 850px;
+    height: 893px;
     width: 550px;
     position: relative;
-    box-shadow: 0.5px 0px 8px 1px #262626;
+    box-shadow: 0.5px 0px 8px 1px #131313;
 }
 
 .pokemon-entry-head {
@@ -20,7 +21,8 @@
     justify-content: space-between;
     padding: 73px 40px 0;
     /*     padding: 7vw 14vh 0px; */
-    color: white;
+    color: #212529;
+    text-transform: capitalize;
 }
 
 .pokemon-entry-head-Name {
@@ -89,6 +91,7 @@
     z-index: 3;
     top: 32px;
     left: 40px;
+    cursor: pointer;
 }
 
 .pokemon-type1-entry {
