@@ -391,6 +391,37 @@ input {
     text-decoration: underline;
 }
 
+.stats-progress-bar {
+    display: flex;
+    flex-direction: column;
+    margin-top: -5px;
+}
+
+.progress-container {
+    height: 10px;
+    background-color: #ccc;
+    position: relative;
+    border-radius: 10px;
+    width: 200px;
+    margin-top: 23px;
+}
+
+.progress-container .progressbar {
+    height: 100%;
+    background-color: #33926a;
+    border-radius: 10px;
+    width: 50px;
+}
+
+@keyframes progress-animation {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
 
 /* #pokedex {
     min-height: 50vh;

@@ -33,7 +33,8 @@
         height: 68vh;
     }
     .moves {
-        max-height: 500px;
+        max-height: 175px;
+        /*  */
     }
     .entry-body-value {
         padding: 0px 60px 0;

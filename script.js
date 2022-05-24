@@ -132,6 +132,18 @@ async function showPokemonStats(i) {
 
 
 function showStatsEntry(i) {
+    let hp = allPokemon[i - 1][`stats`][0][`base_stat`]
+    let percenthp = hp / 255 * 100
+    let atk = allPokemon[i - 1][`stats`][1][`base_stat`]
+    let percentatk = atk / 255 * 100
+    let def = allPokemon[i - 1][`stats`][2][`base_stat`]
+    let percentdef = def / 255 * 100
+    let satk = allPokemon[i - 1][`stats`][3][`base_stat`]
+    let percentsatk = satk / 255 * 100
+    let sdef = allPokemon[i - 1][`stats`][4][`base_stat`]
+    let percentsdef = sdef / 255 * 100
+    let speed = allPokemon[i - 1][`stats`][5][`base_stat`]
+    let percentspeed = speed / 255 * 100
     document.getElementById('pokemon-entry-body').innerHTML = `
     <div class="pokemon-entry-body" id="pokemon-entry-body">
                 <div class="entry-body-headings">
@@ -149,23 +161,41 @@ function showStatsEntry(i) {
             <span>Speed</span>
         </div>
         <div class="stats-data">
-            <span>50</span>
-            <span>50</span>
-            <span>50</span>
-            <span>50</span>
-            <span>50</span>
-            <span>50</span>
+            <span>${allPokemon[i-1][`stats`][0][`base_stat`]}</span>
+            <span>${allPokemon[i-1][`stats`][1][`base_stat`]}</span>
+            <span>${allPokemon[i-1][`stats`][2][`base_stat`]}</span>
+            <span>${allPokemon[i-1][`stats`][3][`base_stat`]}</span>
+            <span>${allPokemon[i-1][`stats`][4][`base_stat`]}</span>
+            <span>${allPokemon[i-1][`stats`][5][`base_stat`]}</span>
         </div>
         <div class="stats-progress-bar">
-            <span>Hp</span>
-            <span>Attack</span>
-            <span>Defense</span>
-            <span>Spez. Attack</span>
-            <span>Spez. Defense</span>
-            <span>Speed</span>
+            <div class="progress-container">
+                <div class="progressbar" id="progressbar-hp"></div>
+            </div>
+            <div class="progress-container">
+                <div class="progressbar" id="progressbar-atk"></div>
+            </div>
+            <div class="progress-container">
+                <div class="progressbar" id="progressbar-def"></div>
+            </div>
+            <div class="progress-container">
+                <div class="progressbar" id="progressbar-s-atk"></div>
+            </div>
+            <div class="progress-container">
+                <div class="progressbar" id="progressbar-s-def"></div>
+            </div>
+            <div class="progress-container">
+                <div class="progressbar" id="progressbar-speed"></div>
+            </div>
         </div>
     </div>
     `;
+    document.getElementById('progressbar-hp').style.width = `${percenthp}%`;
+    document.getElementById('progressbar-atk').style.width = `${percentatk}%`
+    document.getElementById('progressbar-def').style.width = `${percentdef}%`
+    document.getElementById('progressbar-s-atk').style.width = `${percentsatk}%`
+    document.getElementById('progressbar-s-def').style.width = `${percentsdef}%`
+    document.getElementById('progressbar-speed').style.width = `${percentspeed}%`
     document.getElementById('stats-span').classList.add('underline');
 }
 
@@ -225,6 +255,30 @@ function checkSecondType(i) {
         type2 = '';
     }
 }
+
+
+function renderStatusBar(i) {
+        let hp = allPokemon[i-1][`stats`][0][`base_stat`]
+        let percenthp = hp / 255 *100
+        let atk = allPokemon[i-1][`stats`][1][`base_stat`]
+        let percentatk = atk / 255 *100
+        let def = allPokemon[i-1][`stats`][2][`base_stat`]
+        let percentdef = def / 255 *100
+        let satk = allPokemon[i-1][`stats`][3][`base_stat`]
+        let percentsatk = satk / 255 *100
+        let sdef = allPokemon[i-1][`stats`][4][`base_stat`]
+        let percentsdef = sdef / 255 *100
+        let speed = allPokemon[i-1][`stats`][5][`base_stat`]
+        let percentspeed = speed / 255 *100
+
+        document.getElementById('progressbar-hp').style.width = `${percenthp}%`;
+        document.getElementById('progressbar-atk').style.width = `${percentatk}%`
+        document.getElementById('progressbar-def').style.width = `${percentdef}%`
+        document.getElementById('progressbar-s-atk').style.width = `${percentsatk}%`
+        document.getElementById('progressbar-s-def').style.width = `${percentsdef}%`
+        document.getElementById('progressbar-speed').style.width = `${percentspeed}%`
+    }
+
 
 
 
